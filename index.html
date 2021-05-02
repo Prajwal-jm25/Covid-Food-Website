@@ -1,13 +1,337 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Free Food</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Caterers @ Bengaluru</title>
 </head>
 <body>
+  <header class="cd-main-header js-cd-main-header" style="background-color: rgb(11, 88, 88);">
+    <div class="cd-logo-wrapper">
+      <a class="cd-logo" style="color: white; font-weight: bold; font-size: 20px; margin-top: 5px; text-decoration: none; margin-left: 10px;"><p>Caterers Bengaluru</p></a>
+    </div>
+    
+    <div class="js-cd-search">
+   
+    </div>
+  
+    <button class="reset cd-nav-trigger js-cd-nav-trigger" aria-label="Toggle menu"><span></span></button>
+  
+    <ul class="cd-nav__list js-cd-nav__list" style="margin-top: 10px;">
+        <img src="assets/img/india.png" alt="logo" width="70%" height="90%">
+</ul>
+  </header> 
+  
+  <main class="cd-main-content" style="overflow: hidden;">
+    <nav class="cd-side-nav js-cd-side-nav" style="zoom: 150%; position: fixed; height: 100%;">
+        <ul class="cd-side__list js-cd-side__list">
+          <li class="cd-side__label" style="font-size: 16px;"><span>Main</span></li>
+          <li class="cd-side__item cd-side__item--overview">
+            <a style="text-decoration: none;font-size: 11px;" href="index.html">Caterers</a>
+          </li>
+  
+          <li class="cd-side__item  cd-side__item--selected">
+            <a style="text-decoration: none;font-size: 11px;" href="form.html">Register</a>
+          </li>
+  
+          <li class="cd-side__label" style="font-size: 16px;"><span>Secondary</span></li>
+          <li class="cd-side__item cd-side__item--notifications">
+            <a style="text-decoration: none;font-size: 11px;" href="info.html">Information</a>
+          </li>
+        </ul>
+        <li id="developers" class="cd-side__label" style="font-size: 12px;"><span>Designed & Developed by JM and SK</span></li>
+      </nav>
+  
+    <div class="content" style="overflow: hidden; padding-left: 5px; padding-right: 5px;margin-top: 20px;">
+      <p style="font-weight: bolder; font-size: 3rem; display: inline-block; line-height: 1.5; font-weight: 700;">Caterers List</p>
+      <p style="font-style: italic;">The below list contains the verified caterers providing food services in Bengaluru, India.</p>
+        
+        <hr>
+        <div class="search__container" style="margin-top: 20px;">
+            <input class="search__input" id="search-input" type="text" placeholder="location">
+            
+            <label class="switch" style="margin-left: 10px;" >
+              <input type="checkbox" class="name" name="check" value="Non-Veg" id="filterfood" unchecked>
+              <span class="slider round"></span>
+            </label>
+            <label>Pure Veg</label>
 
-<h1>CLick whichever you want</h1>
-<a href="form.html">Contact US</a>
-<a href="table.html">List of Contacts</a>
+            <label class="switch" style="margin-left: 5px;">
+              <input type="checkbox" class="name" name="check" value="Free" id="filtercost" unchecked>
+              <span class="slider round"></span>
+            </label>
+            <label id="labeltoggle">Free</label>
+      
+          </div>
+      <br>
+    <!-- <input type="checkbox" class="name" name="check" value="Free" />Free
+    <input type="checkbox" class="name" name="check" value="Non-Veg" />Veg -->
+
+<br><br>
+      <div class="table-responsive" style="overflow-y: auto;">
+        <table id="caterer_table" class="table table-striped" style="width: 100%;">
+            <tr class="bg-info" style="background-color: hsl(210, 10%, 18.9%);">
+              <th data-column="caterer_name" style="color: white;" data-order="desc">Caterer Name &#9660</th>
+              <th data-column="contact_name" style="color: white;" data-order="desc">Contact Name &#9660</th>
+              <th data-column="phone_number" style="color: white;" >Phone Number</th>
+              <th data-column="secondary_number" style="color: white;" >Secondary Contact No</th>
+              <th data-column="servicable_location" style="color: white;"  data-order="desc">Servicable location &#9660</th>
+              <th name="cost" data-column="cost" style="color: white;"  data-order="desc">Cost &#9660</th>
+              <th data-column="no_of_meals" style="color: white;" >No of Meals</th>
+              <th data-column="frequency_of_meals" style="color: white;">Frequency of Meals</th>
+              <th data-column="delivery_info" style="color: white;" >Delivery Info</th>
+              <th data-column="type_of_food" style="color: white;">Type of Food</th>
+              <th data-column="remarks" style="color: white;" >Remarks</th>
+            </tr>
+            <tbody id="myTable">
+              
+            </tbody>
+          </table>
+        </div>
+    </div> 
+      <!-- Site footer -->
+  </main> 
+  
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/menu-aim.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase.js"></script>
+
+  <script>  
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDH7CjhM7cW0KXiZSIocU0XqqaENF2xNCU",
+      authDomain: "covidcatererdatabase.firebaseapp.com",
+      projectId: "covidcatererdatabase",
+      storageBucket: "covidcatererdatabase.appspot.com",
+      messagingSenderId: "415624003335",
+      appId: "1:415624003335:web:b1c75a0f68241959c9cfa2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    
+    
+    retriveInfo()
+    // Retrieve Data
+    
+    function retriveInfo(){
+      let ref=firebase.database().ref();
+      ref.on("value",gotData);
+    }
+    
+    function gotData(data){
+      var info=data.val();
+      let keys=Object.keys(info);
+      arr = Object.values(info);
+      table(arr)
+      $('th').on('click',function(){
+        var column=$(this).data('column')
+        var order=$(this).data('order')
+        var text=$(this).html()
+    
+        if(order=='desc'){
+          text=text.substring(0, text.length-1)
+          $(this).data('order',"asc")
+          arr=arr.sort((a,b) => a[column]>b[column] ? 1 : -1)
+          text+='&#9650'
+    
+        }else if(order=='asc'){
+          text=text.substring(0, text.length-1)
+          $(this).data('order',"desc")
+          arr=arr.sort((a,b) => a[column]<b[column] ? 1 : -1)
+          text+='&#9660'
+        }
+        $(this).html(text)
+        table(arr)
+        
+      })
+      $('#search-input').on('keyup',function(){
+          if(document.getElementById("filterfood").checked){
+            document.getElementById("filterfood").click();
+          }
+          if(document.getElementById("filtercost").checked){
+            document.getElementById("filtercost").click();
+          }
+          var value=$(this).val()
+          var data=searchTable(value,arr)
+          table(data)
+      })
+      $(document).ready(function(){
+  $(".name").on("click", function() {
+  name_list = []
+  $("#myTable tr").hide()
+  var flag = 1
+  $("input:checkbox[name=check]:checked").each(function(){
+  		flag = 0;
+    	var value = $(this).val().toLowerCase();
+      if(value=='non-veg'){
+        value='veg';
+        $("#myTable tr").filter(function() {
+
+            if($(this).text().toLowerCase().indexOf(value) > -1)
+        		$(this).show()
+    	});
+      value='non-veg'
+      $("#myTable tr").filter(function() {
+            if($(this).text().toLowerCase().indexOf(value) > -1)
+        		$(this).hide()
+    	});
+
+      }
+      else{
+      	$("#myTable tr").filter(function() {
+
+            if($(this).text().toLowerCase().indexOf(value) > -1)
+        		$(this).show()
+    	});
+    }
+ 	 });
+  //   $("input:checkbox[name=food]:checked").each(function(){
+  //     $("input:checkbox[name=cost]:checked").each(function(){
+  //       flag = 0;
+  //       console.log("crazzzzzy")
+  //   	var value = $(this).val().toLowerCase();
+  //     	$("#myTable tr").filter(function() {
+  //         console.log($(this).text().toLowerCase().indexOf("non-veg"))
+  //           if(($(this).text().toLowerCase().indexOf('free')>-1) && ($(this).text().toLowerCase().indexOf('non-veg') > -1))
+  //       		$(this).show()
+  //   	});
+  //     })
+ 	//  });
+    if(flag == 1)
+    	$("#myTable tr").show()
+  });
+});
+
+    }
+    
+    
+    
+    function searchTable(value,data){
+      var filteredData=[]
+      for(var i=0;i<data.length;i++){
+        value=value.toLowerCase()
+        var name=data[i].servicable_location.toLowerCase()
+        if(name.includes(value)){
+          filteredData.push(data[i])
+        }
+      }
+      return filteredData
+    }
+    
+    function table(arr){
+      var table=document.getElementById('myTable')
+      table.innerHTML=''
+    
+      for(let i=0;i<arr.length;i++){
+    
+        let caterer_name=arr[i].caterer_name;
+        let contact_name=arr[i].contact_name;
+        let cost=arr[i].cost;
+        let delivery_info=arr[i].delivery_info
+        let frequency_of_meals=arr[i].frequency_of_meals
+        let no_of_meals=arr[i].no_of_meals
+        let phone_number=arr[i].phone_number
+        let remarks=arr[i].remarks
+        let servicable_location=arr[i].servicable_location
+        let type_of_food=arr[i].type_of_food
+        let secondary_number=arr[i].secondary_number
+      
+        // let infoResults=document.querySelector(".infoResults");
+    
+        var row=`<tr>
+                    <td>${caterer_name}</td>
+                    <td>${contact_name}</td>
+                    <td>${phone_number}</td>
+                    <td>${secondary_number}</td>
+                    <td>${servicable_location}</td>
+                    <td>${cost}</td>
+                    <td>${no_of_meals}</td>
+                    <td>${frequency_of_meals}</td>
+                    <td>${delivery_info}</td>
+                    <td>${type_of_food}</td>
+                    <td>${remarks}</td>
+                 </tr>`
+        table.innerHTML += row
+      }
+    
+    }
+
+    // $(document).ready(function () {
+    // $('#caterer_table').DataTable();
+    // $('.dataTables_length').addClass('bs-select');
+    // });
+    </script>
+  
+  
+  
+  <style>
+        
+      th{
+        color: rgb(20, 1, 1);
+      }
+  
+      .search__container {
+        padding-top: 6px;
+    }
+  
+  .search__title {
+        font-size: 21px;
+        font-weight: 300;
+        text-align: left;
+        color: #ff8b88;
+        padding-right: 800px;
+    }
+  
+  .search__input {
+        width: 20%;
+        padding: 12px 24px;
+  
+        background-color: transparent;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 18px;
+        
+        color: #575756;
+        background-color: transparent;
+  /*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+  
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 95% center;
+        border-radius: 50px;
+        border: 1px solid #575756;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+  
+  .search__input::placeholder {
+            color: rgba(87, 87, 86, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+  
+  .search__input:hover,
+        .search__input:focus {
+            padding: 12px 0;
+            outline: 0;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #575756;
+            border-radius: 0;
+            background-position: 100% center;
+        }
+    </style>
+
+
 
 </body>
 </html>

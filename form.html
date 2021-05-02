@@ -1,112 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Email Template</title>
-  </head>
-  <body>
-    <div class="toaster"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Caterers @ Bengaluru</title>
+</head>
+<body style="background-color: hsl(210, 10%, 18.9%);">
+  <header class="cd-main-header js-cd-main-header" style="background-color: rgb(11, 88, 88);">
+    <div class="cd-logo-wrapper">
+      <a class="cd-logo" style="color: white; font-weight: bold; font-size: 20px; margin-top: 27px; text-decoration: none; margin-left: 10px;"><p>Caterers Bengaluru</p></a>
+    </div>
+    
+    <div class="js-cd-search">
+   
+    </div>
+  
+    <button class="reset cd-nav-trigger js-cd-nav-trigger" aria-label="Toggle menu"><span></span></button>
 
-<main class="wrapper">
-  <section class="section-form">
-    <h1>Contact Us</h1>
-    <p>
-      We will get back to you within 24hrs<br>
-    </p>
+    <ul class="cd-nav__list js-cd-nav__list" style="margin-top: 10px;">
+      <img src="assets/img/india.png" alt="logo" width="70%" height="90%">
+</ul>
+  
+  </header> 
+  
+  <main class="cd-main-content" style="overflow: hidden;">
+    <nav class="cd-side-nav js-cd-side-nav" style="zoom: 150%; position: fixed; height: 100%;">
+      <ul class="cd-side__list js-cd-side__list">
+        <li class="cd-side__label"><span>Main</span></li>
+        <li class="cd-side__item cd-side__item--overview">
+          <a style="text-decoration: none;font-size: 11px;" href="index.html">Caterers</a>
+        </li>
 
-    <form target="_blank" action="https://formsubmit.co/prajwal.jm25@gmail.com" method="POST" name="register" class="form" novalidate>
-      <input name="_redirect" type="hidden" id="name" value="https://covid-food.netlify.app/">
-      <div class="form-group">
-        <label for="name" class="form-label form-label--required">
-          Name:
-        </label>
+        <li class="cd-side__item  cd-side__item--selected">
+          <a style="text-decoration: none;font-size: 11px;" href="form.html">Register</a>
+        </li>
 
-        <div class="form-addon" data-states-for="name">
-          <div class="form-addon__addon">
-            <span class="icon-name"></span>
+        <li class="cd-side__label"><span>Secondary</span></li>
+        <li class="cd-side__item cd-side__item--notifications">
+          <a style="text-decoration: none;font-size: 11px;" href="info.html">Information</a>
+        </li>
+      
+      </ul>
+      <li class="cd-side__label" style="font-size: 12px;"><span>Designed & Developed by JM and SK</span></li>
+    </nav>
+  
+    <div class="form1" style="margin-top: 20px;">
+      <section class="section-form">
+        <h1 style="font-weight: bold;color: white ;">Registration</h1>
+        <p style="color: white; font-style: italic;">
+          We will get back to you within 24 Hours.<br>
+        </p>
+    
+        <form target="_blank" action="https://formsubmit.co/nargundpavan@gmail.com" method="POST" name="register" class="form" validate>
+          <input name="_redirect" type="hidden" id="name" value="https://covid-food.netlify.app/">
+          <div class="form-group">
+            <label for="name" class="form-label form-label--required" style="color: white;">
+              Name:
+            </label>
+    
+            <div class="form-addon" data-states-for="name" style="border-radius: 25px;">
+              <div class="form-addon__addon">
+                <span class="fa fa-user"></span>
+              </div>
+    
+              <input type="text" id="name" name="name" class="form-input" placeholder="Contact Name" required>
+   
+            </div>
+    
           </div>
-
-          <input type="text" id="name" name="name" class="form-input" placeholder="Contact Name" required>
-
-          <span class="form-addon__icon icon-valid"></span>
-          <span class="form-addon__icon icon-invalid"></span>
-        </div>
-
-        <div data-errors-for="name">
-          <small class="form-error" data-errors-when="valueMissing">
-            This field is required.
-          </small>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="email" class="form-label form-label--required">
-          Email:
-        </label>
-
-        <div class="form-addon" data-states-for="email">
-          <div class="form-addon__addon">
-            <span class="icon-email"></span>
+    
+          <div class="form-group">
+            <label for="email" class="form-label form-label--required" style="color: white;">
+              Email:
+            </label>
+    
+            <div class="form-addon" data-states-for="email" style="border-radius: 25px;">
+              <div class="form-addon__addon">
+                <span class="fa fa-envelope"></span>
+              </div>
+    
+              <input type="email" id="email" name="email" class="form-input" placeholder="example@gmail.com" required>
+    
+            </div>
+    
+           
           </div>
-
-          <input type="email" id="email" name="email" class="form-input" placeholder="example@gmail.com" required>
-
-          <span class="form-addon__icon icon-valid"></span>
-          <span class="form-addon__icon icon-invalid"></span>
-        </div>
-
-        <div data-errors-for="email">
-          <small class="form-error" data-errors-when="valueMissing">
-            This field is required.
-          </small>
-
-          <small class="form-error" data-errors-when="typeMismatch">
-            Please enter a valid email address.
-          </small>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="phone" class="form-label form-label--required">
-          Phone number:
-        </label>
-
-        <div class="form-addon" data-states-for="phone">
-          <div class="form-addon__addon">
-            <span class="icon-phone"></span>
+    
+          <div class="form-group">
+            <label for="phone" class="form-label form-label--required" style="color: white;">
+              Phone number:
+            </label>
+    
+            <div class="form-addon" data-states-for="phone" style="border-radius: 25px;">
+              <div class="form-addon__addon">
+                <span class="fa fa-phone"></span>
+              </div>
+    
+              <input type="text" id="phone" name="phone" class="form-input" placeholder="9876543210" pattern="[0-9]{10}" required>
+    
+             
+            </div>
+    
+        
           </div>
-
-          <input type="text" id="phone" name="phone" class="form-input" placeholder="12345 12345" pattern="[0-9]{5} [0-9]{5}" required>
-
-          <span class="form-addon__icon icon-valid"></span>
-          <span class="form-addon__icon icon-invalid"></span>
-        </div>
-
-        <div data-errors-for="phone">
-          <small class="form-error" data-errors-when="patternMismatch">
-            Please enter a valid phone number.
-          </small>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="message" class="form-label">
-          Message:
-        </label>
-        <div class="form-addon" data-states-for="phone">
-          <div class="form-addon__addon">
-            <span class="icon-phone"></span>
+          <div class="form-group">
+            <label for="message" class="form-label" style="color: white;">
+              Message:
+            </label>
+            <div class="form-addon" data-states-for="phone" style="border-radius: 5px;">
+            <input type="text" id="message" name="message" class="form-area" placeholder="Message">
           </div>
-        <input type="text" id="message" name="message" class="form-area" placeholder="Message">
-      </div>
-      </div>
-      <div class="form-footer">
-        <button type="submit" class="button">Sign up</button>
-      </div>
-    </form>
-  </section>
-</main>
+          </div>
+          <div class="form-footer" >
+            <button style="border-radius: 25px;font-weight: bold;" type="submit" class="button">Sign up</button>
+          </div>
+        </form>
+      </section>
+    </div> 
+  </main> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=+919880810246&text=Hi%21%20Need%20to%20talk%20about%20free food%20." class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/menu-aim.js"></script>
+  <script src="assets/js/main.js"></script>
+  
 <script>
   const toaster = document.getElementsByClassName("toaster")[0];
 const form = document.querySelector("form");
@@ -148,6 +174,25 @@ function addToast(type, message) {
 
 </script>
 <style>
+  .float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.my-float {
+  margin-top: 16px;
+}
+
   /*---------------------------------------------*\
     variables
 \*---------------------------------------------*/
@@ -278,7 +323,7 @@ a:focus, a:hover {
 }
 
 .form-footer {
-  text-align: right;
+  text-align: center;
 }
 
 .form-error {

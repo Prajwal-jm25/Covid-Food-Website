@@ -1,0 +1,247 @@
+.contact-form {
+  margin: 35px auto 0px auto;
+  width: 80%;
+}
+
+.contact-form label {
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.contact-form input {
+  padding: 12px 20px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: rgb(255, 255, 255);
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.contact-form input:focus {
+  border-bottom: 2px solid #1a883f;
+}
+
+.contact-form textarea {
+  padding: 12px 20px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: rgb(255, 255, 255);
+  font-size: 18px;
+  border-radius: 3px;
+  width: 100%;
+  font-family: inter;
+  font-weight: normal;
+}
+
+.contact-form textarea:focus {
+  border-bottom: 2px solid #1a883f;
+}
+
+.contact-form button {
+  font-size: 19px;
+  width: 100%;
+  margin-top: 25px;
+  border: none;
+  padding: 12px 20px;
+  background-color: #22b352;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border-bottom: 3px solid #1a883f;
+}
+
+.contact-form button:hover {
+  border-bottom: 3px solid #22b352;
+}
+
+@media all and (max-width: 800px) {
+  .search__container{
+    display: block;
+    width: 800px;
+  }
+  body > main > nav > ul.cd-nav__list.js-cd-nav__list > img{
+    display: none;
+  }
+  body > main > nav > li{
+    text-align: center;
+  }
+
+  .cd-side-nav{
+    zoom: 150%; position: fixed; height: 100%; margin-top: -20px; 
+  }
+
+  #developers{
+    margin-left: -10px;
+  }
+
+
+}
+@media all and (min-width: 1000px) {
+  .content{
+    width: fit-content; 
+    position: relative; 
+    margin-left: 325px; 
+    margin-top: 50px; 
+    position: absolute;
+  }
+  body > main > div > section > div > div > div:nth-child(4){
+    margin-left: 20%;
+  }
+ 
+  .cd-content-wrapper{
+    margin-left: 100px;
+  }
+
+  .form1{
+    justify-content: center;
+    align-items: center;
+    margin-left: 200%; 
+    width: 200%;
+    margin-top: 50px; 
+  }
+
+  .about{
+    margin-left: 200px;
+    
+  }
+
+
+}
+  
+@media all and (min-width: 1000px) {
+  .contact-form {
+    width: 40%;
+  }
+}
+
+@media all and (min-width: 1080px) {
+  .contact-form {
+    width: 30%;
+  }
+
+
+  .about{
+    cursor: pointer;
+    background-color: #2b3035;
+    color: #FFFFFF;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+  .about h1 {
+    padding: 10px 0;
+    margin-bottom: 20px;
+  }
+  .about h2 {
+    opacity: .8;
+  }
+  .about span {
+    display: block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    margin:auto;
+    border-radius:50%;  
+    font-size: 40px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    background-color: #0fd149;
+    border: 2px solid #248008;
+  
+    webkit-transition:all .5s ease;
+     moz-transition:all .5s ease;
+     os-transition:all .5s ease;
+     transition:all .5s ease;
+  
+  }
+  .about-item:hover span{
+    opacity: 1;	
+    border: 2px solid #058d17;
+    font-size: 42px;
+    -webkit-transform: scale(1.1,1.1) rotate(360deg) ;
+    -moz-transform: scale(1.1,1.1) rotate(360deg) ;
+    -o-transform: scale(1.1,1.1) rotate(360deg) ;
+    transform: scale(1.1,1.1) rotate(360deg) ;
+  }
+  .about-item:hover h2{
+    opacity: 1;
+    -webkit-transform: scale(1.1,1.1)  ;
+    -moz-transform: scale(1.1,1.1)  ;
+    -o-transform: scale(1.1,1.1)  ;
+    transform: scale(1.1,1.1) ;
+  }
+  .about .lead{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 27px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #12eb5a;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #12eb5a;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  
+}
